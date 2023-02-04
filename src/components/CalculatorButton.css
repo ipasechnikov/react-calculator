@@ -1,0 +1,10 @@
+.calculator-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10%;
+    height: 10%;
+}
+
+.calculator-button__symbol {
+}
