@@ -1,12 +1,15 @@
+import { useState } from 'react';
 import './Calculator.css';
 import CalculatorButton from './CalculatorButton';
 import CalculatorDisplay from './CalculatorDisplay';
 
 export default function Calculator() {
+  let [displayValue, setDisplayValue] = useState('0');
+
   return (
     <div className="calculator">
       <div className="calculator__display">
-        <CalculatorDisplay />
+        <CalculatorDisplay displayValue={displayValue} />
       </div>
       <div className="calculator__buttons">
         <div className="calculator__button calculator__button--control">
