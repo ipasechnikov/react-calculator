@@ -1,37 +1,71 @@
 import './Calculator.css';
 import CalculatorButton from './CalculatorButton';
+import CalculatorDisplay from './CalculatorDisplay';
 
 export default function Calculator() {
   return (
     <div className="calculator">
-      <div className="calculator-row">
-        <CalculatorButton symbol="AC"/>
-        <CalculatorButton symbol="+/-"/>
-        <CalculatorButton symbol="%"/>
-        <CalculatorButton symbol="/"/>
+      <div className="calculator__display">
+        <CalculatorDisplay />
       </div>
-      <div className="calculator-row">
-        <CalculatorButton symbol="7"/>
-        <CalculatorButton symbol="8"/>
-        <CalculatorButton symbol="9"/>
-        <CalculatorButton symbol="x"/>
-      </div>
-      <div className="calculator-row">
-        <CalculatorButton symbol="4"/>
-        <CalculatorButton symbol="5"/>
-        <CalculatorButton symbol="6"/>
-        <CalculatorButton symbol="-"/>
-      </div>
-      <div className="calculator-row">
-        <CalculatorButton symbol="1"/>
-        <CalculatorButton symbol="2"/>
-        <CalculatorButton symbol="3"/>
-        <CalculatorButton symbol="+"/>
-      </div>
-      <div className="calculator-row">
-        <CalculatorButton symbol="0"/>
-        <CalculatorButton symbol="."/>
-        <CalculatorButton symbol="="/>
+      <div className="calculator__buttons">
+        <div className="calculator__button calculator__button--control">
+          <CalculatorButton symbol="AC" />
+        </div>
+        <div className="calculator__button calculator__button--control">
+          <CalculatorButton symbol="+/-" />
+        </div>
+        <div className="calculator__button calculator__button--control">
+          <CalculatorButton symbol="%" />
+        </div>
+        <div className="calculator__button calculator__button--operation">
+          <CalculatorButton symbol="÷" />
+        </div>
+        <div className="calculator__button calculator__button--digit">
+          <CalculatorButton symbol="7" />
+        </div>
+        <div className="calculator__button calculator__button--digit">
+          <CalculatorButton symbol="8" />
+        </div>
+        <div className="calculator__button calculator__button--digit">
+          <CalculatorButton symbol="9" />
+        </div>
+        <div className="calculator__button calculator__button--operation">
+          <CalculatorButton symbol="x" />
+        </div>
+        <div className="calculator__button calculator__button--digit">
+          <CalculatorButton symbol="4" />
+        </div>
+        <div className="calculator__button calculator__button--digit">
+          <CalculatorButton symbol="5" />
+        </div>
+        <div className="calculator__button calculator__button--digit">
+          <CalculatorButton symbol="6" />
+        </div>
+        <div className="calculator__button calculator__button--operation">
+          <CalculatorButton symbol="-" />
+        </div>
+        <div className="calculator__button calculator__button--digit">
+          <CalculatorButton symbol="1" />
+        </div>
+        <div className="calculator__button calculator__button--digit">
+          <CalculatorButton symbol="2" />
+        </div>
+        <div className="calculator__button calculator__button--digit">
+          <CalculatorButton symbol="3" />
+        </div>
+        <div className="calculator__button calculator__button--operation">
+          <CalculatorButton symbol="+" />
+        </div>
+        <div className="calculator__button calculator__button--digit calculator__button--wide">
+          <CalculatorButton symbol="0" />
+        </div>
+        <div className="calculator__button calculator__button--digit">
+          <CalculatorButton symbol="." />
+        </div>
+        <div className="calculator__button calculator__button--operation">
+          <CalculatorButton symbol="=" />
+        </div>
       </div>
     </div>
   );

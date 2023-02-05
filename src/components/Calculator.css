@@ -1,8 +1,41 @@
 .calculator {
     display: flex;
     flex-direction: column;
+    height: 100%;
+    width: 100%;
+    background-color: black;
 }
 
-.calculator-row {
+.calculator__display {
+    height: 20%;
+}
+
+.calculator__buttons {
     display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+}
+
+.calculator__button {
+    width: 25%;
+}
+
+.calculator__button--wide {
+    display: grid;
+    flex-grow: 2;
+}
+
+.calculator__button--digit {
+    background-color: grey;
+    color: white;
+}
+
+.calculator__button--operation {
+    background-color: orange;
+    color: white;
+}
+
+.calculator__button--control {
+    background-color: lightgrey;
+    color: black;
 }
