@@ -136,4 +136,29 @@ describe('calculator service', () => {
     service.press('=');
     expect(service.display).toBe('3');
   });
+
+  test('calculate percentage when second operand is empty', () => {
+    const service = new CalculatorService();
+    
+    service.press('1');
+    service.press('0');
+    service.press('0');
+    service.press('%');
+    expect(service.display).toBe('1');
+  });
+
+  test('calculate percentage when second operand presented', () => {
+    const service = new CalculatorService();
+    
+    service.press('2');
+    service.press('0');
+    service.press('0');
+    service.press('+')
+    service.press('5');
+    service.press('%');
+    expect(service.display).toBe('10');
+
+    service.press('=');
+    expect(service.display).toBe('210');
+  });
 });
