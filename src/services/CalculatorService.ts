@@ -148,6 +148,7 @@ export default class CalculatorService {
     // waiting for input number
     this.operand1 = result.toString();
     this.operand2 = '';
+    this._operator = '';
   }
 
   private clearAll(): void {
