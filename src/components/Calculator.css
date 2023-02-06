@@ -17,7 +17,17 @@
 }
 
 .calculator__button {
-    width: 25%;
+    width: calc(25% - 2px);
+    transition: 0.3s;
+    margin: 1px;
+}
+
+.calculator__button:hover {
+    filter: brightness(125%);
+}
+
+.calculator__button:active {
+    filter: brightness(75%);
 }
 
 .calculator__button--wide {
