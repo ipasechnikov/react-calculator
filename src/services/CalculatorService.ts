@@ -39,6 +39,9 @@ export default class CalculatorService {
       case '=':
         this.calculate();
         break;
+      case '%':
+        this.handlePercent();
+        break;
       case '0':
       case '1':
       case '2':
@@ -54,7 +57,7 @@ export default class CalculatorService {
     }
   }
 
-  handleDigit(digit: string): void {
+  private handleDigit(digit: string): void {
     // If operator is empty then input is for the first operand
     if (this._operator === '') {
       // If operand is 0 then replace it with pressed digit
@@ -74,17 +77,11 @@ export default class CalculatorService {
     }
   }
 
-  handleOperator(operator: string): void {
-    // If operator is not empty then do calculation with a previous operator
-    if (this._operator !== '') {
-      this.calculate();
-    }
-
-    // And update operator value
+  private handleOperator(operator: string): void {
     this._operator = operator;
   }
 
-  handleDot(): void {
+  private handleDot(): void {
     if (this._operator === '') {
       if (!this.operand1.includes('.')) {
         this.operand1 += '.';
@@ -96,7 +93,18 @@ export default class CalculatorService {
     }
   }
 
-  calculate(): void {
+  private handlePercent(): void {
+    if (this.operand2 === '') {
+      const operandNum = Big(this.operand1);
+      this.operand1 = (operandNum.div(100)).toString();
+    } else {
+      const operandNum1 = Big(this.operand1);
+      const operandNum2 = Big(this.operand2);
+      this.operand2 = operandNum1.div(100).mul(operandNum2).toString();
+    }
+  }
+
+  private calculate(): void {
     let result = Big(0);
 
     // Convert both operands to Big numbers to preserve decimal point precision
@@ -124,7 +132,7 @@ export default class CalculatorService {
     this.operand2 = '';
   }
 
-  clearAll(): void {
+  private clearAll(): void {
     this.operand1 = '0';
     this.operand2 = '';
     this._operator = '';

@@ -60,29 +60,6 @@ describe('calculator service', () => {
     expect(service.display).toBe('46');
   });
 
-  test('consecutive operations', () => {
-    const service = new CalculatorService();
-
-    service.press('1');
-    service.press('+');
-    service.press('9');
-    expect(service.display).toBe('9');
-
-    service.press('-');
-    expect(service.display).toBe('10');
-
-    service.press('4');
-    service.press('=');
-    expect(service.display).toBe('6');
-
-    service.press('/');
-    service.press('3');
-    expect(service.display).toBe('3');
-
-    service.press('+');
-    expect(service.display).toBe('2');
-  });
-
   test('dot for the first operand', () => {
     const service = new CalculatorService();
 
@@ -117,7 +94,7 @@ describe('calculator service', () => {
     expect(service.display).toBe('1.523');
   });
 
-  test('C button for the second operator', () => {
+  test('C button for the second operand', () => {
     const service = new CalculatorService();
 
     service.press('5');
