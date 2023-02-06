@@ -48,3 +48,6 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 ## Contributing
 
 Feel free to report any bugs, issues or create a pull request.
+
+## License
+This project is licensed under [Unlicense License](https://unlicense.org/) - see the [LICENSE](LICENSE) file for details.
