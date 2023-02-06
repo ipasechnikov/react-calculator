@@ -114,4 +114,26 @@ describe('calculator service', () => {
     service.press('=');
     expect(service.display).toBe('4');
   });
+
+  test('sign inversion', () => {
+    const service = new CalculatorService();
+
+    service.press('5');
+    service.press('+/-');
+    expect(service.display).toBe('-5');
+    service.press('+/-');
+    expect(service.display).toBe('5');
+
+    service.press('+');
+    service.press('2');
+    service.press('+/-');
+    expect(service.display).toBe('-2');
+    service.press('+/-');
+    expect(service.display).toBe('2');
+    service.press('+/-');
+    expect(service.display).toBe('-2');
+
+    service.press('=');
+    expect(service.display).toBe('3');
+  });
 });

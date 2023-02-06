@@ -42,6 +42,9 @@ export default class CalculatorService {
       case '%':
         this.handlePercent();
         break;
+      case '+/-':
+        this.handlePlusMinus();
+        break;
       case '0':
       case '1':
       case '2':
@@ -104,8 +107,21 @@ export default class CalculatorService {
     }
   }
 
+  private handlePlusMinus(): void {
+    if (this.operand2 === '') {
+      this.operand1 = Big(this.operand1).neg().toString();
+    } else {
+      this.operand2 = Big(this.operand2).neg().toString();
+    }
+  }
+
   private calculate(): void {
     let result = Big(0);
+
+    // Don't do any calculations if second operator is empty
+    if (this.operand2 === '') {
+      return;
+    }
 
     // Convert both operands to Big numbers to preserve decimal point precision
     const operandNumber1 = Big(+this.operand1);
