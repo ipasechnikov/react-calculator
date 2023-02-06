@@ -136,5 +136,5 @@ describe('calculator service', () => {
 
     service.press('=');
     expect(service.display).toBe('4');
-  })
+  });
 });
