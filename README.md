@@ -2,6 +2,8 @@
 
 A basic calculator created using React. 
 
+You can check a it live yourself over [here](https://ipasechnikov.github.io/react-calculator).
+
 It's fairly a simple calculatorm, no FTM (Finite State Machine) used. All calculation logic is located in [CalculatorService.ts](https://github.com/ipasechnikov/react-calculator/blob/main/src/services/CalculatorService.ts) and tests for it in [CalculatorService.test.ts](https://github.com/ipasechnikov/react-calculator/blob/main/src/services/CalculatorService.test.ts)
 
 Only essential features are implemented:
