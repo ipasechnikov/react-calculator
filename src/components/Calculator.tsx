@@ -1,4 +1,6 @@
-import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMinus, faPlus, faTimes, faDivide, faEquals, faPercent } from '@fortawesome/free-solid-svg-icons';
+
 import { Component, ReactNode } from 'react';
 import CalculatorService from '../services/CalculatorService';
 import './Calculator.css';
@@ -33,13 +35,13 @@ export default class Calculator extends Component {
             <CalculatorButton symbol="AC" onClick={this.createHandleClick('AC')}/>
           </div>
           <div className="calculator__button calculator__button--control">
-            <CalculatorButton symbol="+/-" onClick={this.createHandleClick('+/-')}/>
+            <CalculatorButton symbol={<div><FontAwesomeIcon icon={faPlus} /><FontAwesomeIcon icon={faMinus} /></div>} onClick={this.createHandleClick('+/-')}/>
           </div>
           <div className="calculator__button calculator__button--control">
-            <CalculatorButton symbol="%" onClick={this.createHandleClick('%')}/>
+            <CalculatorButton symbol={<FontAwesomeIcon icon={faPercent} />} onClick={this.createHandleClick('%')}/>
           </div>
           <div className="calculator__button calculator__button--operation">
-            <CalculatorButton symbol="÷" onClick={this.createHandleClick('/')}/>
+            <CalculatorButton symbol={<FontAwesomeIcon icon={faDivide} />} onClick={this.createHandleClick('/')}/>
           </div>
           <div className="calculator__button calculator__button--digit">
             <CalculatorButton symbol="7" onClick={this.createHandleClick('7')}/>
@@ -51,7 +53,7 @@ export default class Calculator extends Component {
             <CalculatorButton symbol="9" onClick={this.createHandleClick('9')}/>
           </div>
           <div className="calculator__button calculator__button--operation">
-            <CalculatorButton symbol="x" onClick={this.createHandleClick('*')}/>
+            <CalculatorButton symbol={<FontAwesomeIcon icon={faTimes} />} onClick={this.createHandleClick('*')}/>
           </div>
           <div className="calculator__button calculator__button--digit">
             <CalculatorButton symbol="4" onClick={this.createHandleClick('4')}/>
@@ -63,7 +65,7 @@ export default class Calculator extends Component {
             <CalculatorButton symbol="6" onClick={this.createHandleClick('6')}/>
           </div>
           <div className="calculator__button calculator__button--operation">
-            <CalculatorButton symbol="-" onClick={this.createHandleClick('-')}/>
+            <CalculatorButton symbol={<FontAwesomeIcon icon={faMinus} />} onClick={this.createHandleClick('-')}/>
           </div>
           <div className="calculator__button calculator__button--digit">
             <CalculatorButton symbol="1" onClick={this.createHandleClick('1')}/>
@@ -75,7 +77,7 @@ export default class Calculator extends Component {
             <CalculatorButton symbol="3" onClick={this.createHandleClick('3')}/>
           </div>
           <div className="calculator__button calculator__button--operation">
-            <CalculatorButton symbol="+" onClick={this.createHandleClick('+')}/>
+            <CalculatorButton symbol={<FontAwesomeIcon icon={faPlus} />} onClick={this.createHandleClick('+')}/>
           </div>
           <div className="calculator__button calculator__button--digit calculator__button--wide">
             <CalculatorButton symbol="0" onClick={this.createHandleClick('0')}/>
@@ -84,7 +86,7 @@ export default class Calculator extends Component {
             <CalculatorButton symbol="." onClick={this.createHandleClick('.')}/>
           </div>
           <div className="calculator__button calculator__button--operation">
-            <CalculatorButton symbol="=" onClick={this.createHandleClick('=')}/>
+            <CalculatorButton symbol={<FontAwesomeIcon icon={faEquals} />} onClick={this.createHandleClick('=')}/>
           </div>
         </div>
       </div>

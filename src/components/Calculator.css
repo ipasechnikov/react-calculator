@@ -20,6 +20,7 @@
     width: calc(25% - 2px);
     transition: 0.3s;
     margin: 1px;
+    font-size: 5vi;
 }
 
 .calculator__button:hover {

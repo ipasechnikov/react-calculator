@@ -5,6 +5,8 @@ export default class CalculatorService {
   private operand2: string = '';
   private _operator: string = '';
 
+  private readonly operandMaxLength = 10;
+
   get display(): string {
     if (this._operator === '') {
       return this.operand1;
@@ -67,15 +69,15 @@ export default class CalculatorService {
       if (this.operand1 === '0') {
         this.operand1 = digit;
       // Otherwise append digit
-      } else {
-        this.operand1 += digit;
+      } else if (this.operand1.length < this.operandMaxLength) {
+          this.operand1 += digit;
       }
     // If operator is not empty then handle input for the second operand
     // If operand is 0 then replace it with pressed digit
     } else if (this.operand2 === '0') {
       this.operand2 = digit;
     // Otherwise append digit
-    } else {
+    } else if (this.operand2.length < this.operandMaxLength) {
       this.operand2 += digit;
     }
   }
